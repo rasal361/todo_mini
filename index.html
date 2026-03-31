@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TASKS — Do the thing.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-grid"></div>
+
+  <main class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="logo">TASKS</div>
+        <div class="date-chip" id="date-chip"></div>
+      </div>
+      <h1 class="headline">
+        <span class="line-1">Get it</span>
+        <span class="line-2">done<span class="dot">.</span></span>
+      </h1>
+      <p class="tagline" id="tagline">Loading your day…</p>
+    </header>
+
+    <!-- Add task -->
+    <div class="add-card">
+      <input
+        type="text"
+        id="task-input"
+        class="task-input"
+        placeholder="What needs doing?"
+        maxlength="120"
+        autocomplete="off"
+      />
+      <button class="btn-add" id="add-btn" aria-label="Add task">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M9 1v16M1 9h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Filters + stats -->
+    <div class="toolbar">
+      <div class="filters" role="tablist">
+        <button class="filter-btn active" data-filter="all" role="tab">All</button>
+        <button class="filter-btn" data-filter="active" role="tab">Active</button>
+        <button class="filter-btn" data-filter="done" role="tab">Done</button>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-label" id="progress-label">0%</span>
+      </div>
+    </div>
+
+    <!-- Task list -->
+    <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="count-info" id="count-info"></span>
+      <button class="btn-clear" id="clear-done">Clear completed</button>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
